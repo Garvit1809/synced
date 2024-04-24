@@ -75,7 +75,7 @@ function App() {
           <Stat
             label={"Body Temperature"}
             sensor={"MAX30102"}
-            unit={"°C"}
+            unit={"°F"}
             value={sensorData.Sensor1.Body_Temp}
           />
           <Stat
@@ -92,13 +92,13 @@ function App() {
           <Stat
             label={"Temperature"}
             sensor={"MPU6050"}
-            unit={"°F"}
+            unit={"°C"}
             value={sensorData.Sensor2.Temp}
           />
           <Stat
             label={"Acceleration"}
             sensor={"MPU6050"}
-            unit={"m/s"}
+            unit={"m/s2"}
             value={
               <div>
                 <span>X: {sensorData.Sensor2.ac_x}</span>
@@ -112,7 +112,7 @@ function App() {
           <Stat
             label={"Rotation"}
             sensor={"MPU6050"}
-            unit={"m/s"}
+            unit={"rad/s"}
             value={
               <div>
                 <span>X: {sensorData.Sensor2.av_x}</span>
@@ -122,6 +122,12 @@ function App() {
                 <span>Z: {sensorData.Sensor2.av_z}</span>
               </div>
             }
+          />
+          <Stat
+            label={"ECG Signal"}
+            sensor={"MPU6050"}
+            unit={"uV"}
+            value={sensorData.Sensor2.ecg_signal}
           />
         </div>
       )}
